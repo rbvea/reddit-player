@@ -10,11 +10,26 @@ html
     // SCRIPTS END
 
     // STYLES
-    
+    link(rel="stylesheet", href="/linker/styles/app.css")
     // STYLES END
 
     // TEMPLATES
     
     // TEMPLATES END
+
+    link(rel="stylesheet", href="/styles/semantic.css")
+    link(rel="stylesheet", href="/linker/styles/app.css")
+    script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js")
   body
-    block content
+    #wrapper.ui.vertically.divided.grid
+      .row
+        .sixteen.wide.column
+          block playbar
+      .row
+        .ten.wide.column
+          block content
+        .six.wide.column
+         block sidebar
+      .row
+        .sixteen.wide.column
+          block comments
