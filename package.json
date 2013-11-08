@@ -11,7 +11,7 @@
         "optimist": "0.3.4",
         "passport-reddit": "0.2.3",
         "jade": "0.35.0",
-	"request": "2.27.0",
+    	"request": "2.27.0"
     },
     "scripts": {
         "start": "node app.js",
