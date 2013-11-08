@@ -28,8 +28,24 @@
 
 module.exports.routes = {
   '/': {
-    view: 'index'
-  }
+    controller: 'SongController',
+    action: 'find'
+  },
+
+  '/login': {
+    controller: 'UserController',
+    action: 'login',
+  } ,
+
+  // '/reddit/read/:id' : {
+  //   controller: 'RedditController',
+  //   action: 'find'
+  // }
+
+  // '/song/get/:track': {
+  //   controller: 'SongController',
+  //   action: 'get',
+  // }
 
   /*
   // But what if you want your home page to display

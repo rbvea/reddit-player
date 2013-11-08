@@ -1,7 +1,15 @@
 extends layout
 
 block content
-  h1 hello,world
+  .row
+    .sixteen.columns
+      .ui.fluid.input
+        input(type="text", ng-model="group", placeholder="paste a subreddit/multireddit here")
+  .row
+    .sixteen.columns
+      #player-div(style="height: 300px")
+        iframe#yt-player(ng-hide="angular.isUndefined(current_youtube)", height="300px", width="100%")
+      h1(ng-hide="{{angular.isUndefined(current_youtube)}}") {{current_youtube.data.media.oembed.title}}  
 
 block playbar
   #playbar
@@ -13,4 +21,8 @@ block comments
 
 block sidebar
   #sidebar
-    p sidebar
+    .ui.divided.list
+      .item(ng-repeat="song in songs | media")
+        i(class="{{song | icon}}")
+        .content
+          a.header(ng-click="set(song)") {{song.data.media.oembed.title}}  
