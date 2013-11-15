@@ -11,7 +11,12 @@
         "optimist": "0.3.4",
         "passport-reddit": "0.2.3",
         "jade": "0.35.0",
-    	"request": "2.27.0"
+    	"request": "2.27.0",
+	"waterline-criteria":"0.9.4"
+    },
+    "engines: {
+	"node" : "0.10.x",
+	"npm" : "1.2.x"
     },
     "scripts": {
         "start": "node app.js",
