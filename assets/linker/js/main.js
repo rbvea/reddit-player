@@ -1,6 +1,6 @@
-var app = angular.module('rplayer', ['soundcloud-service', 'youtube-service']);
+var app = angular.module('rplayer', []);
 
-app.controller('PlayerCtrl', ['$scope' ,'$http', '$log', 'soundcloud', 'youtube', '$window' ,  function(scope, $http, $log, soundcloud, youtube, $window) {
+app.controller('PlayerCtrl', ['$scope' ,'$http', '$window' ,  function(scope, $http, $window) {
   scope.group = 'http://reddit.com/r/listentothis';
   scope.songs = [];
   scope.current_youtube = null;
@@ -60,5 +60,4 @@ app.filter('media', ['$log', function($log) {
     return songs;
   }
 }]);
-
 
