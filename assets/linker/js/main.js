@@ -10,12 +10,10 @@ app.controller('PlayerCtrl', ['$scope' ,'$http', '$log', 'soundcloud', 'youtube'
 
   $window.onYouTubeIframeAPIReady = function() {
     scope.ready = true;
-    // $log.warn('iframe api ready');
     scope.player = new $window.YT.Player('player-div', {
       height: '300',
       width: '100%',
     });
-    // $log.warn(scope.player);
   }
 
   scope.$watch('group', function(nu, old) {
@@ -30,13 +28,6 @@ app.controller('PlayerCtrl', ['$scope' ,'$http', '$log', 'soundcloud', 'youtube'
     if(!angular.isUndefined(nu) && nu != null) {
       var id = nu.data.media.oembed.url.split('?v=')[1];
       scope.player.loadVideoById(id);
-      // var player = new yt.player('yt-player', {
-      //   videoId: id,
-      // });
-        // $log.warn(scope.player);
-           // angular.element(document.querySelector('#yt-player')).attr('src', 'http://www.youtube.com/embed/' + id + '?enablejsapi=1&version=3&origin=http://reddit-player.herkouapp.com');
-      // scope.player = new YT.player('yt-player');
-      // scope.player.loadVideoById(id);
     }
   });
 
